@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "aa8ed13f-43c0-47d1-a12a-ea4ba2238d6a",
+		"name": "Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43016790"
+	},
+	"item": [
+		{
+			"name": "Search_Item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/search?keyword=Nike react phantom run flyknit 2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "Nike react phantom run flyknit 2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding_Items_To_Cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sku\":\"NJC48508-Pink-X\",\r\n    \"Size\" :\"S\",\r\n    \"Color\":\"Black\",\r\n    \"qty\":\"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/cart/mine/items",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"cart",
+						"mine",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verifing_Cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/cart?cartId=bfdedc8824034b72b3e8c734a2b5121b",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"cart"
+					],
+					"query": [
+						{
+							"key": "cartId",
+							"value": "bfdedc8824034b72b3e8c734a2b5121b"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://demo.evershop.io/",
+			"type": "string"
+		}
+	]
+}
